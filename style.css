@@ -1,0 +1,100 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: Arial, sans-serif;
+  display: flex;
+  scroll-behavior: smooth;
+}
+
+/* Sidebar */
+.sidebar {
+  position: sticky;
+  top: 0;
+  width: 250px;
+  height: 100vh;
+  background: #222;
+  color: #fff;
+  padding: 20px;
+}
+.sidebar h2 { margin-bottom: 20px; }
+.sidebar ul { list-style: none; }
+.sidebar ul li { margin: 15px 0; }
+.sidebar ul li a {
+  color: #ddd;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+.sidebar ul li a:hover { color: #fff; }
+
+/* Main Content */
+.main-content {
+  flex: 1;
+  scroll-snap-type: y mandatory;
+  overflow-y: scroll;
+  height: 100vh;
+}
+
+/* Story Sections */
+.story-block {
+  height: 100vh;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  scroll-snap-align: start;
+  color: #fff;
+  text-align: center;
+  padding: 40px;
+  overflow: hidden;
+}
+
+/* Background and Foreground layering */
+.background, .foreground {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+}
+
+.foreground {
+  opacity: 0.4; /* faded overlay for readability */
+}
+
+/* keep this for later parts of socio-anthropological self */
+.foreground.red {
+  opacity: 0.75;
+  background-blend-mode: multiply;
+  background-color: rgba(255,0,0,0.75);
+}
+
+
+/* Text styling */
+.text {
+  position: relative;
+  max-width: 800px;
+  z-index: 1;
+}
+.text h1, .text h2 { margin-bottom: 20px; }
+.text p {
+  margin-bottom: 15px;
+  text-shadow: 2px 2px 6px rgba(0,0,0,0.7);
+}
+/* Semi-transparent text box */
+.text-box {
+  position: relative;
+  max-width: 800px;
+  z-index: 1;
+  background: rgba(0,0,0,0.75); /* 75% opacity black */
+  padding: 20px;
+  border-radius: 8px;
+  text-align: center;
+  color: #fff;
+}
+
+.text-box h2 {
+  margin-bottom: 20px;
+}
+
+.text-box p {
+  margin-bottom: 15px;
+}
