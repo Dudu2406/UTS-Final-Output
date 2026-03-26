@@ -98,3 +98,66 @@ body {
 .text-box p {
   margin-bottom: 15px;
 }
+/* General responsive text */
+.text h1, .text h2, .text-box p {
+  font-size: 1.2rem;
+  line-height: 1.5;
+}
+
+@media (max-width: 768px) {
+  /* Sidebar becomes top navigation on tablets/phones */
+  .sidebar {
+    position: relative;
+    width: 100%;
+    height: auto;
+    padding: 10px;
+  }
+
+  .sidebar ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 0;
+  }
+
+  .sidebar li {
+    margin: 5px;
+  }
+
+  /* Main content adjusts */
+  .main-content {
+    margin-left: 0;
+    padding: 0;
+  }
+
+  /* Text boxes scale down */
+  .text-box {
+    width: 90%;
+    font-size: 0.9rem;
+    padding: 10px;
+  }
+
+  .text h1 {
+    font-size: 1.5rem;
+  }
+
+  .text h2 {
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  /* For very small screens */
+  .text h1 {
+    font-size: 1.2rem;
+  }
+
+  .text h2 {
+    font-size: 1rem;
+  }
+
+  .text-box {
+    font-size: 0.8rem;
+    padding: 8px;
+  }
+}
