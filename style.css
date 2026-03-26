@@ -1,4 +1,8 @@
-* { margin: 0; padding: 0; box-sizing: border-box; }
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
 body {
   font-family: Arial, sans-serif;
@@ -6,7 +10,6 @@ body {
   scroll-behavior: smooth;
 }
 
-/* Sidebar */
 .sidebar {
   position: sticky;
   top: 0;
@@ -16,17 +19,29 @@ body {
   color: #fff;
   padding: 20px;
 }
-.sidebar h2 { margin-bottom: 20px; }
-.sidebar ul { list-style: none; }
-.sidebar ul li { margin: 15px 0; }
+
+.sidebar h2 {
+  margin-bottom: 20px;
+}
+
+.sidebar ul {
+  list-style: none;
+}
+
+.sidebar ul li {
+  margin: 15px 0;
+}
+
 .sidebar ul li a {
   color: #ddd;
   text-decoration: none;
   transition: color 0.3s ease;
 }
-.sidebar ul li a:hover { color: #fff; }
 
-/* Main Content */
+.sidebar ul li a:hover {
+  color: #fff;
+}
+
 .main-content {
   flex: 1;
   scroll-snap-type: y mandatory;
@@ -34,11 +49,12 @@ body {
   height: 100vh;
 }
 
-/* Story Sections */
 .story-block {
-  height: 100vh;
   position: relative;
+  width: 100%;
+  min-height: 100vh;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   scroll-snap-align: start;
@@ -48,47 +64,54 @@ body {
   overflow: hidden;
 }
 
-/* Background and Foreground layering */
-.background, .foreground {
+.background,
+.foreground {
   position: absolute;
   inset: 0;
   background-size: cover;
   background-position: center;
+  background-repeat: no-repeat;
 }
 
 .foreground {
-  opacity: 0.4; /* faded overlay for readability */
+  opacity: 0.4;
 }
 
-/* keep this for later parts of socio-anthropological self */
 .foreground.red {
   opacity: 0.75;
   background-blend-mode: multiply;
   background-color: rgba(255,0,0,0.75);
 }
 
-
-/* Text styling */
 .text {
   position: relative;
   max-width: 800px;
   z-index: 1;
+  text-align: center;
+  color: #fff;
 }
-.text h1, .text h2 { margin-bottom: 20px; }
+
+.text h1,
+.text h2 {
+  margin-bottom: 20px;
+}
+
 .text p {
   margin-bottom: 15px;
   text-shadow: 2px 2px 6px rgba(0,0,0,0.7);
 }
-/* Semi-transparent text box */
+
 .text-box {
   position: relative;
   max-width: 800px;
-  z-index: 1;
-  background: rgba(0,0,0,0.75); /* 75% opacity black */
+  width: 90%;
+  background: rgba(0,0,0,0.75);
+  color: #fff;
   padding: 20px;
   border-radius: 8px;
-  text-align: center;
-  color: #fff;
+  font-size: 1rem;
+  line-height: 1.6;
+  z-index: 1;
 }
 
 .text-box h2 {
@@ -98,14 +121,24 @@ body {
 .text-box p {
   margin-bottom: 15px;
 }
-/* General responsive text */
-.text h1, .text h2, .text-box p {
+
+.text h1,
+.text h2,
+.text-box p {
   font-size: 1.2rem;
   line-height: 1.5;
 }
 
+.text h1 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+}
+
+.text h2 {
+  font-size: 1.8rem;
+}
+
 @media (max-width: 768px) {
-  /* Sidebar becomes top navigation on tablets/phones */
   .sidebar {
     position: relative;
     width: 100%;
@@ -124,40 +157,37 @@ body {
     margin: 5px;
   }
 
-  /* Main content adjusts */
   .main-content {
     margin-left: 0;
     padding: 0;
   }
 
-  /* Text boxes scale down */
   .text-box {
     width: 90%;
     font-size: 0.9rem;
-    padding: 10px;
+    padding: 15px;
   }
 
+  .text h1 {
+    font-size: 1.8rem;
+  }
+
+  .text h2 {
+    font-size: 1.3rem;
+  }
+}
+
+@media (max-width: 480px) {
   .text h1 {
     font-size: 1.5rem;
   }
 
   .text h2 {
-    font-size: 1.2rem;
-  }
-}
-
-@media (max-width: 480px) {
-  /* For very small screens */
-  .text h1 {
-    font-size: 1.2rem;
-  }
-
-  .text h2 {
-    font-size: 1rem;
+    font-size: 1.1rem;
   }
 
   .text-box {
     font-size: 0.8rem;
-    padding: 8px;
+    padding: 10px;
   }
 }
